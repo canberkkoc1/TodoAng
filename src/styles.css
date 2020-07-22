@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.completed{
+    text-decoration: line-through;
+}
+
+.hover-cursor{
+    cursor: pointer;
+}
+
+#hover-cursor{
+    cursor: pointer;
+}
