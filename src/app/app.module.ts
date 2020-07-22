@@ -14,6 +14,7 @@ import { TodoComponent } from './todo/todo.component';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -28,7 +29,8 @@ import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
       AngularFireStorageModule,
       FormsModule,
       NgbPaginationModule, 
-      NgbAlertModule
+      NgbAlertModule,
+      
    ],
    providers: [],
    bootstrap: [

@@ -14,28 +14,34 @@
         <span class="input-group-text hover-cursor" id="basic-addon1" 
         (click)="onAddTodo(iTitle)"><i class="fa fa-plus"></i></span>
     </div>
-    
-    
-    
-    
+       
 </div>
 
-<ul class="list-group">
-  <li class="list-group-item"  *ngFor="let item of todoArray">
-    <input class="notCompleted" id="hover-cursor" type="checkbox" [(ngModel)] = "item.completed" (click)="checkTodo(item.$key,item.completed)">
-    <span  class="item-completed" [ngClass]="{'completed': item.completed}" >  {{item.todoTitle}} <br> <span>Deadline: {{item.due}}</span> </span>
+
+<div class="input-group mb-3" *ngFor="let item of todoArray" >
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" aria-label="Checkbox for following text input" [(ngModel)] = "item.completed" (click)="checkTodo(item.$key,item.completed)">
+    </div>
+  </div>
+  <ul class="list-group" style="width: 90%;">
+    <li class="list-group-item" [ngClass]="item.completed ? 'line' : null">
+      <span  class="item-completed" [ngClass]="{'completed': item.completed}" >  {{item.todoTitle}} <br> <span>Deadline: {{item.due}}</span> </span>
     <span>{{item.iDate}}</span>
+      
     <span class="remove-item" (click)="onDelete(item.$key)">
-      <button class="btn-danger hover-cursor pull-right"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      <button type="button" class="btn btn-outline-danger pull-right"><i class="fa fa-trash" aria-hidden="true"></i></button>
     </span>
-    
+
     <input [ngClass]="item.due !== ' ' ? 'hide' : null" type="date" name="" id="" #due 
     (keyup.enter)="onDate(item.$key,due)">    
-   
+    </li>
+  </ul>
 
-  
+</div>
 
-  </li>
-</ul>
+
+
+
 
  

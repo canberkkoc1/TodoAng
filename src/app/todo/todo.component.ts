@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {TodoServiceService} from './todoservice/todoService.service';
 
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
-  providers:[TodoServiceService]
+  providers:[TodoServiceService],
 })
 export class TodoComponent implements OnInit {
   todoArray: any[];
@@ -39,8 +40,10 @@ onDelete($key:string){
 }
 
 onDate($key:string,due){
-  console.log(due.value);
+  // console.log(due.value);
   this.toDoService.addDate($key,due.value)
 }
+
+
 
 }

@@ -25,7 +25,8 @@ export class TodoServiceService {
     this.todoList.push({
       todoTitle:todoTitle,
       completed:false,
-      due:" "      
+      due:" ",
+        
      
     })
     
@@ -41,7 +42,7 @@ checkTodo($key:string,flag){
 }
 addDate($key:string,date:string):void{
   this.todoList.update($key,{due:date})
-  console.log("2inci " + date);
-}
  
+}
+
 }
