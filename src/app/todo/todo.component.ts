@@ -38,8 +38,9 @@ onDelete($key:string){
   this.toDoService.deleteTodo($key)
 }
 
-onDate($key:string,date:Date){
-  this.toDoService.addDate($key,date)
+onDate($key:string,due){
+  console.log(due.value);
+  this.toDoService.addDate($key,due.value)
 }
 
 }

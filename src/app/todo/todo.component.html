@@ -8,21 +8,33 @@
   #iTitle 
   (keyup.enter)="onAddTodo(iTitle)"
   >
+
   
     <div class="input-group-prepend">
         <span class="input-group-text hover-cursor" id="basic-addon1" 
         (click)="onAddTodo(iTitle)"><i class="fa fa-plus"></i></span>
     </div>
+    
+    
+    
+    
 </div>
 
 <ul class="list-group">
   <li class="list-group-item"  *ngFor="let item of todoArray">
     <input class="notCompleted" id="hover-cursor" type="checkbox" [(ngModel)] = "item.completed" (click)="checkTodo(item.$key,item.completed)">
-    <span  class="item-completed" [ngClass]="{'completed': item.completed}" >  {{item.todoTitle}}  </span>
+    <span  class="item-completed" [ngClass]="{'completed': item.completed}" >  {{item.todoTitle}} <br> <span>Deadline: {{item.due}}</span> </span>
     <span>{{item.iDate}}</span>
     <span class="remove-item" (click)="onDelete(item.$key)">
       <button class="btn-danger hover-cursor pull-right"><i class="fa fa-trash" aria-hidden="true"></i></button>
     </span>
+    
+    <input [ngClass]="item.due !== ' ' ? 'hide' : null" type="date" name="" id="" #due 
+    (keyup.enter)="onDate(item.$key,due)">    
+   
+
+  
+
   </li>
 </ul>
 
